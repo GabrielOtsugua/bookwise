@@ -3,163 +3,145 @@ import { Card } from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-9 gap-16">
-      <main className="col-span-6">
-        <header className="mb-12">
-          <h2 className="text-2xl">Início</h2>
-        </header>
+    <div className="grid grid-cols-3 items-start gap-4">
+      <main className="col-span-2 grid gap-8">
+        <h2 className="text-2xl">Início</h2>
 
-        <section className="grid gap-8">
-          <section className="grid gap-4">
-            <p>Sua ultima leitura</p>
+        <section className="grid gap-4">
+          <p>Sua ultima leitura</p>
 
-            <Card className="p-4 grid grid-cols-8 gap-4">
-              <figure className="col-span-1 bg-white min-h-40"></figure>
+          <Card className="flex gap-4 p-4">
+            <figure className="bg-white h-36 min-w-24 rounded"></figure>
 
-              <main className="col-span-7">
-                <span className="flex justify-between">
-                  <p>Há 2 dias</p>
-                  <p className="mb-4">estrelinhas...</p>
+            <main className="flex flex-col justify-between">
+              <span className="flex justify-between items-center">
+                <p className="text-sm">Há 2 dias</p>
+                <p className="text-sm">estrelinhas...</p>
+              </span>
+
+              <span>
+                <p>Entendendo Algoritimos</p>
+                <p className="text-sm">Aditya Bhargava</p>
+              </span>
+
+              <p className="text-sm">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Tenetur, incidunt excepturi?...
+              </p>
+            </main>
+          </Card>
+
+          <Card className="flex gap-4 p-4">
+            <figure className="bg-white h-36 min-w-24 rounded"></figure>
+
+            <main className="flex flex-col justify-between">
+              <span className="flex justify-between items-center">
+                <p className="text-sm">Há 2 dias</p>
+                <p className="text-sm">estrelinhas...</p>
+              </span>
+
+              <span>
+                <p>Entendendo Algoritimos</p>
+                <p className="text-sm">Aditya Bhargava</p>
+              </span>
+
+              <p className="text-sm">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Tenetur, incidunt excepturi?...
+              </p>
+            </main>
+          </Card>
+        </section>
+
+        <section className="grid gap-4">
+          <p>Avaliações mais recentes</p>
+
+          <Card className="p-4">
+            <header className="flex justify-between mb-8">
+              <div className="flex items-center gap-4">
+                <Avatar>
+                  <AvatarImage
+                    src="https://github.com/shadcn.png"
+                    alt="@shadcn"
+                  />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+
+                <span>
+                  <p>Jaxson Dias</p>
+                  <p className="text-sm">Hoje</p>
+                </span>
+              </div>
+
+              <p>estrelinhas...</p>
+            </header>
+
+            <main className="flex gap-4">
+              <figure className="h-36 min-w-24 bg-white rounded"></figure>
+
+              <div className="flex flex-col justify-between">
+                <span>
+                  <p>Entendendo Algoritimos</p>
+                  <p className="text-sm">Aditya Bhargava</p>
                 </span>
 
-                <p>Entendendo Algoritimos</p>
-                <p>Aditya Bhargava</p>
-
-                <p className="mt-4">
+                <p className="text-sm">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Tenetur, incidunt excepturi? Consectetur saepe, magni debitis
-                  explicabo porro numquam eaque ut.
+                  explicabo porro numquam eaque ut. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit...
                 </p>
-              </main>
-            </Card>
-          </section>
+              </div>
+            </main>
+          </Card>
 
-          <section className="grid gap-4">
-            <p>Avaliações mais recentes</p>
+          <Card className="p-4">
+            <header className="flex justify-between mb-8">
+              <div className="flex items-center gap-4">
+                <Avatar>
+                  <AvatarImage
+                    src="https://github.com/shadcn.png"
+                    alt="@shadcn"
+                  />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
 
-            <Card className="p-4">
-              <header className="flex justify-between mb-8">
-                <div className="flex items-center gap-2">
-                  <figure>
-                    <Avatar>
-                      <AvatarImage
-                        src="https://github.com/shadcn.png"
-                        alt="@shadcn"
-                      />
-                      <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
-                  </figure>
+                <span>
+                  <p>Jaxson Dias</p>
+                  <p className="text-sm">Hoje</p>
+                </span>
+              </div>
 
-                  <span>
-                    <p>Jaxson Dias</p>
-                    <p>Hoje</p>
-                  </span>
-                </div>
+              <p>estrelinhas...</p>
+            </header>
 
-                <p>estrelinhas...</p>
-              </header>
+            <main className="flex gap-4">
+              <figure className="h-36 min-w-24 bg-white rounded"></figure>
 
-              <main className=" grid grid-cols-8 gap-4">
-                <figure className="col-span-1 bg-white min-h-40"></figure>
-
-                <div className="col-span-7">
+              <div className="flex flex-col justify-between">
+                <span>
                   <p>Entendendo Algoritimos</p>
-                  <p>Aditya Bhargava</p>
+                  <p className="text-sm">Aditya Bhargava</p>
+                </span>
 
-                  <p className="mt-4">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Tenetur, incidunt excepturi? Consectetur saepe, magni
-                    debitis explicabo porro numquam eaque ut.
-                  </p>
-                </div>
-              </main>
-            </Card>
-
-            <Card className="p-4">
-              <header className="flex justify-between mb-8">
-                <div className="flex items-center gap-2">
-                  <figure>
-                    <Avatar>
-                      <AvatarImage
-                        src="https://github.com/shadcn.png"
-                        alt="@shadcn"
-                      />
-                      <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
-                  </figure>
-
-                  <span>
-                    <p>Jaxson Dias</p>
-                    <p>Hoje</p>
-                  </span>
-                </div>
-
-                <p>estrelinhas...</p>
-              </header>
-
-              <main className=" grid grid-cols-8 gap-4">
-                <figure className="col-span-1 bg-white min-h-40"></figure>
-
-                <div className="col-span-7">
-                  <p>Entendendo Algoritimos</p>
-                  <p>Aditya Bhargava</p>
-
-                  <p className="mt-4">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Tenetur, incidunt excepturi? Consectetur saepe, magni
-                    debitis explicabo porro numquam eaque ut.
-                  </p>
-                </div>
-              </main>
-            </Card>
-
-            <Card className="p-4">
-              <header className="flex justify-between mb-8">
-                <div className="flex items-center gap-2">
-                  <figure>
-                    <Avatar>
-                      <AvatarImage
-                        src="https://github.com/shadcn.png"
-                        alt="@shadcn"
-                      />
-                      <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
-                  </figure>
-
-                  <span>
-                    <p>Jaxson Dias</p>
-                    <p>Hoje</p>
-                  </span>
-                </div>
-
-                <p>estrelinhas...</p>
-              </header>
-
-              <main className=" grid grid-cols-8 gap-4">
-                <figure className="col-span-1 bg-white min-h-40"></figure>
-
-                <div className="col-span-7">
-                  <p>Entendendo Algoritimos</p>
-                  <p>Aditya Bhargava</p>
-
-                  <p className="mt-4">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Tenetur, incidunt excepturi? Consectetur saepe, magni
-                    debitis explicabo porro numquam eaque ut.
-                  </p>
-                </div>
-              </main>
-            </Card>
-
-            <p>Home &copy; BookWise - 2024</p>
-          </section>
+                <p className="text-sm">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Tenetur, incidunt excepturi? Consectetur saepe, magni debitis
+                  explicabo porro numquam eaque ut. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit...
+                </p>
+              </div>
+            </main>
+          </Card>
         </section>
+
+        <p>Home &copy; BookWise - 2024</p>
       </main>
 
-      <aside className="col-span-3">
-        <header className="mb-12">
-          <h2 className="text-2xl">Populares</h2>
-        </header>
+      <aside className="col-span-1 grid gap-8">
+        <h2 className="text-2xl">Populares</h2>
 
         <section className="grid gap-4">
           <span className="flex justify-between">
@@ -167,26 +149,26 @@ export default function Home() {
             <p>Ver todos</p>
           </span>
 
-          <Card className="p-4 grid grid-cols-10 gap-4">
-            <figure className="bg-white h-28 col-span-3"></figure>
+          <Card className="p-4 flex gap-4">
+            <figure className="bg-white h-24 w-16 rounded"></figure>
 
-            <main className="flex flex-col justify-between col-span-7">
+            <main className="flex flex-col justify-between">
               <span>
                 <p>A revolução dos bichos</p>
-                <p>George Orwell</p>
+                <p className="text-sm">George Orwell</p>
               </span>
 
               <p>estrelinhas...</p>
             </main>
           </Card>
 
-          <Card className="p-4 grid grid-cols-10 gap-4">
-            <figure className="bg-white h-28 col-span-3"></figure>
+          <Card className="p-4 flex gap-4">
+            <figure className="bg-white h-24 w-16 rounded"></figure>
 
-            <main className="flex flex-col justify-between col-span-7">
+            <main className="flex flex-col justify-between">
               <span>
                 <p>A revolução dos bichos</p>
-                <p>George Orwell</p>
+                <p className="text-sm">George Orwell</p>
               </span>
 
               <p>estrelinhas...</p>
