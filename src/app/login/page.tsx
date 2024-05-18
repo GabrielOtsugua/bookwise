@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { User, UserCheck } from "lucide-react";
+import { Library, User, UserCheck } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function Login() {
@@ -10,8 +10,12 @@ export default function Login() {
 
   return (
     <div className="grid grid-cols-5 p-4 h-screen">
-      <Card className="col-span-2 flex justify-center items-center bg-indigo-500">
-        <h1 className="text-3xl font-bold">BookWise</h1>
+      <Card className="col-span-2 flex flex-col justify-between bg-primary-foreground p-4">
+        <h1 className="text-primary flex items-center gap-1 text-lg">
+          <Library size={20} /> BookWise
+        </h1>
+
+        <em>"A Sabedoria dos Livros ao Seu Alcance."</em>
       </Card>
 
       <div className="col-span-3 flex justify-center items-center">

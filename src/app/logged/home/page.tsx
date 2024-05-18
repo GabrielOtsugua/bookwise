@@ -4,28 +4,28 @@ import { ChevronRight, HomeIcon, SearchCheck } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-3 items-start gap-4">
+    <div className="grid grid-cols-3 items-start gap-8">
       <main className="col-span-2 grid gap-8">
         <h2 className="text-2xl font-bold flex items-center gap-2">
-          <HomeIcon />
+          <HomeIcon className="text-primary" />
           Início
         </h2>
 
         <section className="grid gap-4">
           <span className="flex justify-between items-end">
             <p>Sua ultima leitura</p>
-            <p className="text-sm flex gap-2">
+            <p className="text-sm flex gap-2 text-primary">
               Ver todos <ChevronRight size={20} />
             </p>
           </span>
 
           <Card className="flex gap-4 p-4">
-            <figure className="bg-white h-36 min-w-24 rounded"></figure>
+            <figure className="bg-white h-40 min-w-28 rounded"></figure>
 
             <main className="flex flex-col justify-between">
               <span className="flex justify-between items-center">
                 <p className="text-sm font-light">Há 2 dias</p>
-                <p className="text-sm">estrelinhas...</p>
+                <p className="text-primary">estrelinhas...</p>
               </span>
 
               <span>
@@ -33,9 +33,11 @@ export default function Home() {
                 <p className="text-sm text-muted-foreground">Aditya Bhargava</p>
               </span>
 
-              <p className="text-sm">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Tenetur, incidunt excepturi?...
+              <p className="text-sm line-clamp-2 leading-6">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                sit omnis iure deserunt iste corporis, assumenda ut officiis
+                ducimus delectus libero minus eaque provident inventore culpa,
+                facilis, distinctio magni voluptatem!
               </p>
             </main>
           </Card>
@@ -57,15 +59,17 @@ export default function Home() {
 
                 <span>
                   <p>Jaxson Dias</p>
-                  <p className="text-sm font-light">Hoje</p>
+                  <p className="text-sm font-light text-muted-foreground">
+                    Hoje
+                  </p>
                 </span>
               </div>
 
-              <p>estrelinhas...</p>
+              <p className="text-primary">estrelinhas...</p>
             </header>
 
             <main className="flex gap-4">
-              <figure className="h-36 min-w-24 bg-white rounded"></figure>
+              <figure className="h-40 min-w-28 bg-white rounded"></figure>
 
               <div className="flex flex-col justify-between">
                 <span>
@@ -75,44 +79,47 @@ export default function Home() {
                   </p>
                 </span>
 
-                <p className="text-sm">
+                <p className="text-sm line-clamp-4 leading-6">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Tenetur, incidunt excepturi? Consectetur saepe, magni debitis
-                  explicabo porro numquam eaque ut. Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit...
+                  Eaque ut fugit eius minima suscipit facere temporibus maxime
+                  praesentium quis excepturi consequatur assumenda voluptatum,
+                  beatae ipsam omnis aliquam, expedita sint perferendis?
                 </p>
               </div>
             </main>
           </Card>
         </section>
 
-        <p>Home &copy; BookWise - 2024</p>
+        <p className="text-muted-foreground text-xs">
+          Home &copy; BookWise - 2024
+        </p>
       </main>
 
       <aside className="col-span-1 grid gap-8">
-        <h2 className="text-2xl flex items-center gap-2">
-          <SearchCheck /> Populares
+        <h2 className="text-2xl font-bold flex items-center gap-2">
+          <SearchCheck className="text-primary" /> Populares
         </h2>
 
         <section className="grid gap-4">
           <span className="flex justify-between items-end">
             <p>Livros populares</p>
-            <p className="text-sm flex gap-2">
+            <p className="text-sm flex gap-2 text-primary">
               Ver todos <ChevronRight size={20} />
             </p>
           </span>
 
           <Card className="p-4 flex gap-4">
-            <figure className="bg-white h-24 w-16 rounded"></figure>
+            <figure className="bg-white h-24 min-w-16 rounded"></figure>
 
             <main className="flex flex-col justify-between">
               <span>
-                <p>A revolução dos bichos</p>
-                <p className="text-sm text-muted-foreground">George Orwell</p>
+                <p className="line-clamp-2">A revolução dos bichos</p>
+                <p className="text-sm text-muted-foreground line-clamp-1">
+                  George Orwell
+                </p>
               </span>
 
-              <p>estrelinhas...</p>
+              <p className="text-primary">estrelinhas...</p>
             </main>
           </Card>
         </section>

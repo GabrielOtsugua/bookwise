@@ -13,10 +13,10 @@ import {
 
 export default function Profile() {
   return (
-    <div className="grid grid-cols-3 items-start gap-4">
+    <div className="grid grid-cols-3 items-start gap-8">
       <main className="col-span-2 grid gap-8">
-        <h2 className="text-2xl flex items-center gap-2">
-          <User /> Perfil
+        <h2 className="text-2xl flex items-center gap-2 font-bold">
+          <User className="text-primary" /> Perfil
         </h2>
 
         <span className="relative">
@@ -31,7 +31,7 @@ export default function Profile() {
           <p>Há 2 dias</p>
           <Card className="p-4">
             <header className="flex gap-4">
-              <figure className="h-36 min-w-24 bg-white rounded"></figure>
+              <figure className="h-40 min-w-28 bg-white rounded"></figure>
 
               <div className="flex flex-col justify-between">
                 <span>
@@ -41,18 +41,18 @@ export default function Profile() {
                   </p>
                 </span>
 
-                <p>estrelinhas...</p>
+                <p className="text-primary">estrelinhas...</p>
               </div>
             </header>
 
-            <p className="mt-6 text-sm">
+            <p className="mt-6 text-sm leading-6">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
               consequatur repellat earum sunt possimus aliquam, hic animi quia
               iste laudantium ipsum porro dolor suscipit, explicabo quisquam non
               ab dicta illum!
             </p>
 
-            <p className="text-sm">
+            <p className="text-sm leading-6">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora
               excepturi saepe suscipit, nesciunt iusto quaerat molestias itaque
               earum nemo ea qui numquam eos fuga tenetur quo, possimus hic
@@ -74,10 +74,10 @@ export default function Profile() {
             <p className="text-xs text-muted-foreground">Membro desde 2019</p>
           </header>
 
-          <Separator />
+          <Separator className="bg-primary" />
 
           <div className="flex items-center gap-4">
-            <BookOpenCheck size={20} />
+            <BookOpenCheck size={20} className="" />
             <span>
               <p>1050</p>
               <p className="text-sm text-muted-foreground">Páginas lidas</p>
@@ -85,7 +85,7 @@ export default function Profile() {
           </div>
 
           <div className="flex items-center gap-4">
-            <LibraryBig size={20} />
+            <LibraryBig size={20} className="" />
             <span>
               <p>10</p>
               <p className="text-sm text-muted-foreground">Livros avaliados</p>
@@ -93,7 +93,7 @@ export default function Profile() {
           </div>
 
           <div className="flex items-center gap-4">
-            <Users size={20} />
+            <Users size={20} className="" />
             <span>
               <p>6</p>
               <p className="text-sm text-muted-foreground">Autores lidos</p>
@@ -101,7 +101,7 @@ export default function Profile() {
           </div>
 
           <div className="flex items-center gap-4">
-            <Bookmark size={20} />
+            <Bookmark size={20} className="" />
             <span>
               <p>Computação</p>
               <p className="text-sm text-muted-foreground">
