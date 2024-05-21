@@ -1,26 +1,22 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import ProfileAside from "@/components/ProfileAside";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
-import {
-  BookOpenCheck,
-  Bookmark,
-  LibraryBig,
-  Search,
-  User,
-  Users,
-} from "lucide-react";
+import { Search, User } from "lucide-react";
 
 export default function Profile() {
   return (
     <div className="grid grid-cols-3 items-start gap-8">
-      <main className="col-span-2 grid gap-8">
+      <main className="col-span-3 lg:col-span-2 grid gap-8">
         <h2 className="text-2xl flex items-center gap-2 font-bold">
           <User className="text-primary" /> Perfil
         </h2>
 
-        <span className="relative">
-          <Input placeholder="Buscar livro avaliado" />
+        <div className="lg:hidden">
+          <ProfileAside />
+        </div>
+
+        <span className="relative md:w-96">
+          <Input placeholder="Buscar livro lido" />
           <Search
             size={18}
             className="absolute top-2.5 right-3 text-muted-foreground"
@@ -62,54 +58,8 @@ export default function Profile() {
         </section>
       </main>
 
-      <aside className="col-span-1">
-        <Card className="p-12 grid gap-8">
-          <header className="flex flex-col items-center">
-            <Avatar className="mb-4">
-              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-
-            <p className="text-lg">Cristofer Rosser</p>
-            <p className="text-xs text-muted-foreground">Membro desde 2019</p>
-          </header>
-
-          <Separator className="bg-primary" />
-
-          <div className="flex items-center gap-4">
-            <BookOpenCheck size={20} className="" />
-            <span>
-              <p>1050</p>
-              <p className="text-sm text-muted-foreground">Páginas lidas</p>
-            </span>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <LibraryBig size={20} className="" />
-            <span>
-              <p>10</p>
-              <p className="text-sm text-muted-foreground">Livros avaliados</p>
-            </span>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <Users size={20} className="" />
-            <span>
-              <p>6</p>
-              <p className="text-sm text-muted-foreground">Autores lidos</p>
-            </span>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <Bookmark size={20} className="" />
-            <span>
-              <p>Computação</p>
-              <p className="text-sm text-muted-foreground">
-                Categoria mais lida
-              </p>
-            </span>
-          </div>
-        </Card>
+      <aside className="col-span-1 hidden lg:block">
+        <ProfileAside />
       </aside>
     </div>
   );

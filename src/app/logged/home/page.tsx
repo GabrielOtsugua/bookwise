@@ -1,10 +1,13 @@
+import ExplorerSheet from "@/components/ExplorerSheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
+import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { ChevronRight, HomeIcon, SearchCheck } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-3 items-start gap-8">
+    <div className="lg:grid grid-cols-3 items-start gap-8">
       <main className="col-span-2 grid gap-8">
         <h2 className="text-2xl font-bold flex items-center gap-2">
           <HomeIcon className="text-primary" />
@@ -14,9 +17,12 @@ export default function Home() {
         <section className="grid gap-4">
           <span className="flex justify-between items-end">
             <p>Sua ultima leitura</p>
-            <p className="text-sm flex gap-2 text-primary">
+            <Link
+              href={"/logged/profile"}
+              className="text-sm flex gap-2 text-primary"
+            >
               Ver todos <ChevronRight size={20} />
-            </p>
+            </Link>
           </span>
 
           <Card className="flex gap-4 p-4">
@@ -79,7 +85,7 @@ export default function Home() {
                   </p>
                 </span>
 
-                <p className="text-sm line-clamp-4 leading-6">
+                <p className="text-sm line-clamp-3 leading-6">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Eaque ut fugit eius minima suscipit facere temporibus maxime
                   praesentium quis excepturi consequatur assumenda voluptatum,
@@ -90,38 +96,53 @@ export default function Home() {
           </Card>
         </section>
 
-        <p className="text-muted-foreground text-xs">
+        <p className="hidden lg:block text-muted-foreground text-xs">
           Home &copy; BookWise - 2024
         </p>
       </main>
 
       <aside className="col-span-1 grid gap-8">
-        <h2 className="text-2xl font-bold flex items-center gap-2">
+        <h2 className="text-2xl font-bold flex items-center gap-2 mt-8 lg:mt-0">
           <SearchCheck className="text-primary" /> Populares
         </h2>
 
         <section className="grid gap-4">
           <span className="flex justify-between items-end">
             <p>Livros populares</p>
-            <p className="text-sm flex gap-2 text-primary">
+            <Link
+              href={"/logged/explorer"}
+              className="text-sm flex gap-2 text-primary"
+            >
               Ver todos <ChevronRight size={20} />
-            </p>
+            </Link>
           </span>
 
-          <Card className="p-4 flex gap-4">
-            <figure className="bg-white h-24 min-w-16 rounded"></figure>
+          <div className="flex md:grid lg:flex flex-col grid-cols-2 gap-4">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Card className="p-4 flex gap-4 cursor-pointer">
+                  <figure className="bg-white h-24 min-w-16 rounded"></figure>
 
-            <main className="flex flex-col justify-between">
-              <span>
-                <p className="line-clamp-2">A revolução dos bichos</p>
-                <p className="text-sm text-muted-foreground line-clamp-1">
-                  George Orwell
-                </p>
-              </span>
+                  <main className="flex flex-col justify-between">
+                    <span>
+                      <p className="line-clamp-2">A revolução dos bichos</p>
+                      <p className="text-sm text-muted-foreground line-clamp-1">
+                        George Orwell
+                      </p>
+                    </span>
 
-              <p className="text-primary">estrelinhas...</p>
-            </main>
-          </Card>
+                    <p className="text-primary">estrelinhas...</p>
+                  </main>
+                </Card>
+              </SheetTrigger>
+
+              <ExplorerSheet />
+            </Sheet>
+          </div>
+
+          <p className="lg:hidden text-muted-foreground text-xs">
+            Home &copy; BookWise - 2024
+          </p>
         </section>
       </aside>
     </div>

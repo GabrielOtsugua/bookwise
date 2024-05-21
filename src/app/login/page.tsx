@@ -9,17 +9,22 @@ export default function Login() {
   const router = useRouter();
 
   return (
-    <div className="grid grid-cols-5 p-4 h-screen">
-      <Card className="col-span-2 flex flex-col justify-between bg-primary-foreground p-4">
+    <div className="grid lg:grid-cols-5 p-4 h-screen">
+      <Card className="col-span-2 hidden lg:flex flex-col justify-between bg-primary-foreground p-4">
         <h1 className="text-primary flex items-center gap-1 text-lg">
           <Library size={20} /> BookWise
         </h1>
 
-        <em>"A Sabedoria dos Livros ao Seu Alcance."</em>
+        <em>"A sabedoria dos livros ao seu alcance."</em>
       </Card>
 
       <div className="col-span-3 flex justify-center items-center">
-        <main className="w-[30%]">
+        <h1 className="absolute flex lg:hidden items-center gap-1 top-4 left-4 md:top-8 md:left-8 text-lg text-primary">
+          <Library />
+          Bookwise
+        </h1>
+
+        <div className="lg:w-[50%] xl:w-[40%] 2xl:w-[30%]">
           <h3 className="text-xl">Boas vindas!</h3>
           <p className="mb-8 text-sm text-muted-foreground">
             Faça seu login ou acesse como visitante.
@@ -40,7 +45,7 @@ export default function Login() {
               Acessar como visitante
             </Button>
           </div>
-        </main>
+        </div>
       </div>
     </div>
   );

@@ -2,17 +2,21 @@
 
 import Link from "next/link";
 import { Card } from "./ui/card";
-import { Home, LogOut, Telescope, User } from "lucide-react";
+import { Home, Library, LogOut, Telescope, User } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
+import { Button } from "./ui/button";
 
 export default function LayoutAside() {
   const pathname = usePathname();
+  const router = useRouter();
 
   return (
-    <Card className="flex flex-col justify-between col-span-1 h-[500px] py-8 px-12 bg-primary-foreground">
+    <Card className="col-span-1 hidden lg:flex flex-col justify-between items-center h-[500px] py-8 bg-primary-foreground">
       <nav className="grid gap-4">
-        <h1 className="text-xl font-bold text-center text-primary mb-4">
+        <h1 className="flex gap-1 text-xl font-bold text-center text-primary mb-4">
+          <Library />
           BookWise
         </h1>
 
@@ -44,20 +48,34 @@ export default function LayoutAside() {
 
       <footer>
         <span className="flex items-center justify-center gap-2 mb-6">
-          <Avatar className="justify-self-center">
+          <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
           <p>Cristofer</p>
         </span>
 
-        <Link
-          href={"/login"}
-          className="flex gap-2 items-center text-muted-foreground"
-        >
-          <LogOut size={20} />
-          Sair
-        </Link>
+        <Dialog>
+          <DialogTrigger asChild>
+            <p className="flex gap-2 items-center text-muted-foreground cursor-pointer">
+              <LogOut size={20} />
+              Sair
+            </p>
+          </DialogTrigger>
+
+          <DialogContent>
+            <p>Deseja sair da conta atual?</p>
+
+            <div className="flex justify-end gap-2">
+              <Button
+                onClick={() => router.push("/login")}
+                variant={"secondary"}
+              >
+                Sair
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
       </footer>
     </Card>
   );

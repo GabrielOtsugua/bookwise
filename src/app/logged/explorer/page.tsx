@@ -1,6 +1,8 @@
+import ExplorerSheet from "@/components/ExplorerSheet";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { Search, Telescope } from "lucide-react";
 
 export default function Explorer() {
@@ -10,7 +12,7 @@ export default function Explorer() {
         <Telescope className="text-primary" /> Explorar
       </h2>
 
-      <span className="relative w-96 -mb-4">
+      <span className="relative md:w-96 -mb-4">
         <Input placeholder="Buscar livro ou autor" />
         <Search
           size={18}
@@ -18,7 +20,7 @@ export default function Explorer() {
         />
       </span>
 
-      <div className="flex gap-4">
+      <div className="flex gap-4 overflow-auto">
         <Button variant={"secondary"} className="rounded-full">
           Tudo
         </Button>
@@ -45,21 +47,27 @@ export default function Explorer() {
         </Button>
       </div>
 
-      <section className="grid grid-cols-3 gap-4">
-        <Card className="p-4 flex gap-4">
-          <figure className="bg-white h-40 min-w-28 rounded"></figure>
+      <section className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <Sheet>
+          <SheetTrigger asChild>
+            <Card className="p-4 flex gap-4 cursor-pointer">
+              <figure className="bg-white h-40 min-w-28 rounded"></figure>
 
-          <main className="flex flex-col justify-between">
-            <span>
-              <p className="line-clamp-2">A revolução dos bichos</p>
-              <p className="text-sm text-muted-foreground line-clamp-1">
-                George Orwell
-              </p>
-            </span>
+              <main className="flex flex-col justify-between">
+                <span>
+                  <p className="line-clamp-2">A revolução dos bichos</p>
+                  <p className="text-sm text-muted-foreground line-clamp-1">
+                    George Orwell
+                  </p>
+                </span>
 
-            <p className="text-primary">estrelinhas...</p>
-          </main>
-        </Card>
+                <p className="text-primary">estrelinhas...</p>
+              </main>
+            </Card>
+          </SheetTrigger>
+
+          <ExplorerSheet />
+        </Sheet>
       </section>
     </div>
   );
