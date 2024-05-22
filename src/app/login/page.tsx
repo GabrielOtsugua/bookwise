@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Library, User, UserCheck } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 export default function Login() {
   const router = useRouter();
@@ -24,7 +25,12 @@ export default function Login() {
           Bookwise
         </h1>
 
-        <div className="lg:w-[50%] xl:w-[40%] 2xl:w-[30%]">
+        <motion.div
+          initial={{ opacity: 0, y: -12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="lg:w-[50%] xl:w-[40%] 2xl:w-[30%]"
+        >
           <h3 className="text-xl">Boas vindas!</h3>
           <p className="mb-8 text-sm text-muted-foreground">
             Faça seu login ou acesse como visitante.
@@ -45,7 +51,7 @@ export default function Login() {
               Acessar como visitante
             </Button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

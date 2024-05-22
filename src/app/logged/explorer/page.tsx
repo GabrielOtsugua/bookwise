@@ -1,13 +1,21 @@
+"use client";
+
 import ExplorerSheet from "@/components/ExplorerSheet";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { Search, Telescope } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Explorer() {
   return (
-    <div className="grid gap-8">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      className="grid gap-8"
+    >
       <h2 className="text-2xl flex items-center gap-2 font-bold">
         <Telescope className="text-primary" /> Explorar
       </h2>
@@ -69,6 +77,6 @@ export default function Explorer() {
           <ExplorerSheet />
         </Sheet>
       </section>
-    </div>
+    </motion.div>
   );
 }

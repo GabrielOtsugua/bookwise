@@ -1,14 +1,22 @@
+"use client";
+
 import ExplorerSheet from "@/components/ExplorerSheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { ChevronRight, HomeIcon, SearchCheck } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
     <div className="lg:grid grid-cols-3 items-start gap-8">
-      <main className="col-span-2 grid gap-8">
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+        className="col-span-2 grid gap-8"
+      >
         <h2 className="text-2xl font-bold flex items-center gap-2">
           <HomeIcon className="text-primary" />
           Início
@@ -99,9 +107,14 @@ export default function Home() {
         <p className="hidden lg:block text-muted-foreground text-xs">
           Home &copy; BookWise - 2024
         </p>
-      </main>
+      </motion.main>
 
-      <aside className="col-span-1 grid gap-8">
+      <motion.aside
+        initial={{ opacity: 0, x: 12 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4 }}
+        className="col-span-1 grid gap-8"
+      >
         <h2 className="text-2xl font-bold flex items-center gap-2 mt-8 lg:mt-0">
           <SearchCheck className="text-primary" /> Populares
         </h2>
@@ -144,7 +157,7 @@ export default function Home() {
             Home &copy; BookWise - 2024
           </p>
         </section>
-      </aside>
+      </motion.aside>
     </div>
   );
 }

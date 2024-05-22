@@ -1,12 +1,20 @@
+"use client";
+
 import ProfileAside from "@/components/ProfileAside";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Search, User } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Profile() {
   return (
     <div className="grid grid-cols-3 items-start gap-8">
-      <main className="col-span-3 lg:col-span-2 grid gap-8">
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+        className="col-span-3 lg:col-span-2 grid gap-8"
+      >
         <h2 className="text-2xl flex items-center gap-2 font-bold">
           <User className="text-primary" /> Perfil
         </h2>
@@ -56,11 +64,16 @@ export default function Profile() {
             </p>
           </Card>
         </section>
-      </main>
+      </motion.main>
 
-      <aside className="col-span-1 hidden lg:block">
+      <motion.aside
+        initial={{ opacity: 0, x: 12 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4 }}
+        className="col-span-1 hidden lg:block"
+      >
         <ProfileAside />
-      </aside>
+      </motion.aside>
     </div>
   );
 }
